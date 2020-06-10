@@ -28,9 +28,10 @@ I am a third year BSc Information and Knowledge Systems student, in the Software
 Individual profile: 
 LinkedIn profile: linkedin.com/in/mxolisi-mkanzi-1a40bb168
 
-> **Name Surname**  
+> **Rashiidah Weira Wanda**  
+I am a ﬁnal year computer science student with skills in C++, Java, Python, Javascript, HTML, CSS, PHP, assembly language and Mysql. I am passionate about what I do and eager to use my skills in the project.  My experience in basic IT functionalities, coupled with my enthusiasm and dedication to achieving success, I believe I could swiftly surpass your expectations in this project.
 Individual profile: ...  
-LinkedIn profile: ...  
+LinkedIn profile: https://www.linkedin.com/in/wanda-weira-9929b1116/ 
 
 > **Name Surname**  
 Individual profile: ...  

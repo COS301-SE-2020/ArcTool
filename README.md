@@ -33,6 +33,9 @@ I am a ﬁnal year computer science student with skills in C++, Java, Python, Ja
 Individual profile: ...  
 LinkedIn profile: https://www.linkedin.com/in/wanda-weira-9929b1116/ 
 
-> **Name Surname**  
+> **Bernadette Kebirungi** 
+I am a final year BSc Computer Science student. I am always willing to learn. I work hard and I enjoy what I do and I will be looking
+forward to putting my many skills, as learnt throughout the course of this degree to good use.
+They include a knowledge of C++, Java, data structures, C, MySQL, MongoDB, Android, Assembly, javascript, HTML, css, NodeJS etc. I am eager and willing to pick up other languages as required.
 Individual profile: ...  
-LinkedIn profile: ...  
+LinkedIn profile: https://www.linkedin.com/in/bernadette-kebirungi-a94071142/ 

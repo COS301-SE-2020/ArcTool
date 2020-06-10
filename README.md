@@ -13,8 +13,17 @@ Clickup: ...
 
 ## Meet the Team
 > **Nqedile Maseko**  
-Individual profile: ...  
-LinkedIn profile: ...  
+I am a third-year Computer Science student,
+with a few but essential skills. I’m a team player,
+would say I work well with people and believe in
+teamwork. I’m familiar with a few languages,
+such as C++, Java, MySQL, a bit of Assembly and
+web dev languages such as PHP, HTML, CSS,
+Javascript and JQuery. I am team leader, and
+keen to see what I can learn from this project as
+a whole, keen to come up with dynamic
+solutions.  
+LinkedIn profile: https://www.linkedin.com/in/nqedile-maseko-5280501a4
 
 > **Happiness Masombuka**  
 I am a final BSc Computer Science student who is broad-minded, hardworking and possessesself-discipline. I intend to use my skills in database systems (MariaDB) for the implementation of the storage requirements of the application, my Java knowledge for the API, and the skills I have in UX design to build an intuitive and efficient user interface for the application. I can easily adapt to new technologies and have an eagerness to learn, hence I plan to equip myself with all the necessary skills required to ensure the success of this project.  

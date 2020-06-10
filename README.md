@@ -22,9 +22,11 @@ I am a final BSc Computer Science student who is broad-minded, hardworking and p
 Individual profile: ...  
 LinkedIn profile: https://www.linkedin.com/in/happiness-masombuka-0128071a7  
 
-> **Name Surname**  
-Individual profile: ...  
-LinkedIn profile: ...  
+> **Mxolisi Mkanzi**
+I am a third year BSc Information and Knowledge Systems student, in the Software Development stream. Up to this far I have done C++, C#, ASP.net (MVC), HTML, CSS, JavaScript, PHP, MySQL, a bit of Angular with ionic, a bit of Java and a bit of Assembly. I am a diligent student, who is always eager to learn new things and I chose this degree because of passion, which then makes me to never give up whenever I come across predicaments.
+
+Individual profile: 
+LinkedIn profile: linkedin.com/in/mxolisi-mkanzi-1a40bb168
 
 > **Name Surname**  
 Individual profile: ...  

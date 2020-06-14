@@ -23,6 +23,7 @@ Javascript and JQuery. I am team leader, and
 keen to see what I can learn from this project as
 a whole, keen to come up with dynamic
 solutions.  
+Individual profile: 
 LinkedIn profile: https://www.linkedin.com/in/nqedile-maseko-5280501a4
 
 > **Happiness Masombuka**  

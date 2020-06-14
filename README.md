@@ -11,7 +11,7 @@ SRS Document: https://www.overleaf.com/project/5edf6e7f78441c0001698eb2
 ## Project Management Tool
 Clickup: https://app.clickup.com/2554217/v/l/s/4511633
 
-## Meet the Team
+## Meet the Team 
 > **Nqedile Maseko**  
 I am a third-year Computer Science student,
 with a few but essential skills. I’m a team player,

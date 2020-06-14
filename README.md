@@ -6,10 +6,10 @@ ArcTool is built for efficiency and ease, it aims to make the architect's job ea
 Demo1 video: ...
 
 ## Documentation
-SRS Document: ...
+SRS Document: https://www.overleaf.com/project/5edf6e7f78441c0001698eb2
 
 ## Project Management Tool
-Clickup: ...
+Clickup: https://app.clickup.com/2554217/v/l/s/4511633
 
 ## Meet the Team
 > **Nqedile Maseko**  

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <style>
+    .logo {
+      /*font-family:  "Comic Sans MS", cursive, sans-serif;*/
+      font-style: oblique;
+      font-weight: bold;
+      font-style: italic;
+      color: rgb(10, 72, 114);
+      text-shadow: 10px 10px 10px black, 0 0 25px powderblue, 0 0 5px darkblue;
+      font-size: 200px;
+      font-style: italic;
+      border-radius: 25px;
+      padding-left: 25px;
+      margin-top: 50px;
+    }
+
+    .mainDiv{
+        padding-top: 20px;
+        border: solid 10px powderblue;
+        width: 35%;
+        border-radius: 20px;
+        font-size: 30px;
+        align-content: center;
+    }
+
+    .input{
+        height: 30px;
+        float: right;
+        padding-right: 20px;
+        padding-top: 10px;
+        background-color: floralwhite;
+        border-color: powderblue;
+        width: 250px;
+        color: black;
+        border-radius: 25px;
+        font-size: 20px;
+    }
+
+    .submit{
+        height: 30px;
+        background-color: green;
+        border-color: powderblue;
+        width: 150px;
+        color: black;
+        border-radius: 25px;
+        font-size: 20px;
+    }
+
+    #index-body{
+        background-color: grey;
+    }
+    </style>
+</head>
+<body id="index-body">
+<center>
+    <div class="logo">ArcTools</div>
+    <form class="mainDiv" action="functionalRequirements.html">
+        <label for="firstname">First name: </label>
+        <input type="text" class="input" name="firstname" id="firstname" placeholder="e.g Jack">
+        <br>
+        <br>
+        <label for="surname">Surname: </label>
+        <input type="text" class="input" name="username" id="surname" placeholder="e.g Smmith">
+        <br>
+        <br>
+        <label for="email">Email address: </label>
+        <input type="email" class="input" name="email" id="email" placeholder="e.g user47@gmail.com">
+        <br>
+        <br>
+        <label for="username">Username: </label>
+        <input type="text" class="input" name="username" id="username" placeholder="e.g Zack">
+        <br>
+        <br>
+        <label for="password">Password: </label>
+        <input type="password" class="input" name="password" id="password">
+        <br>
+        <br>
+        <label for="cpass">Confirm Password: </label>
+        <input type="text" class="input" name="cpass" id="cpass">
+        <br>
+        <br>
+        <input type="submit" class="submit" value="Sign up">
+        <br>
+        <p style="font-size: 15px;">If already have an account <a href="index.html">click here</a> to log in</p>
+    </form>
+</center>
+</body>
+</html>

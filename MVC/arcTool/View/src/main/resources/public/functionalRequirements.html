@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <style>
+    .logo {
+      /*font-family:  "Comic Sans MS", cursive, sans-serif;*/
+      font-style: oblique;
+      font-weight: bold;
+      font-style: italic;
+      color: rgb(10, 72, 114);
+      text-shadow: 10px 10px 10px black, 0 0 25px powderblue, 0 0 5px darkblue;
+      font-size: 200px;
+      font-style: italic;
+      border-radius: 25px;
+      padding-left: 25px;
+      margin-top: 50px;
+    }
+
+    .mainDiv{
+        padding-top: 20px;
+        border: solid 10px powderblue;
+        width: 35%;
+        border-radius: 20px;
+        font-size: 30px;
+        align-content: center;
+    }
+
+    .input{
+        height: 30px;
+        float: right;
+        padding-right: 20px;
+        padding-top: 10px;
+        background-color: floralwhite;
+        border-color: powderblue;
+        width: 250px;
+        color: black;
+        border-radius: 25px;
+        font-size: 20px;
+    }
+
+    .submit{
+        height: 30px;
+        background-color: green;
+        border-color: powderblue;
+        width: 150px;
+        color: black;
+        border-radius: 25px;
+        font-size: 20px;
+    }
+
+    #index-body{
+        background-color: grey;
+    }
+    </style>
+</head>
+<body id="index-body">
+<center>
+    <div class="logo">ArcTools</div>
+    <form class="mainDiv" action="extract" method="get">
+        <label for="FR">Enter the functional requirements below: </label>
+        <textarea id="FR" name="FR" rows="5" cols="50"></textarea>
+        <br>
+        <br>
+        <label for="path">Enter the path to the JavaDocs:</label>
+        <input type="text" name="path" id="path">
+        <br>
+        <br>
+        <input type="submit" class="submit" value="Submit">
+        <br>
+    </form>
+</center>
+</body>
+</html>

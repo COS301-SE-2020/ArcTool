@@ -1,17 +1,108 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
- xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
- <title>Home</title>
- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
- <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <title>FR</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css">
+    <style>
+    .logo {
+      /*font-family:  "Comic Sans MS", cursive, sans-serif;*/
+      font-style: oblique;
+      font-weight: bold;
+      font-style: italic;
+      color: rgb(10, 72, 114);
+      text-shadow: 10px 10px 10px black, 0 0 25px powderblue, 0 0 5px darkblue;
+      font-size: 200px;
+      font-style: italic;
+      border-radius: 25px;
+      padding-left: 25px;
+      margin-top: 50px;
+    }
+
+    .mainDiv{
+        padding-top: 20px;
+        border: solid 10px darkgray;
+        width: 55%;
+        border-radius: 20px;
+        font-size: 30px;
+        align-content: center;
+    }
+
+    .input{
+        height: 30px;
+        float: right;
+        padding-right: 20px;
+        padding-top: 10px;
+        background-color: floralwhite;
+        border-color: powderblue;
+        width: 250px;
+        color: black;
+        border-radius: 25px;
+        font-size: 10px;
+    }
+
+    .submit{
+        height: 30px;
+        background-color: darkgray;
+        border-color: powderblue;
+        width: 150px;
+        color: black;
+        border-radius: 25px;
+        font-size: 20px;
+    }
+
+    #index-body{
+        background-color: grey;
+    }
+    </style>
 </head>
 <body>
- <div class="container">
-  <h2>Hi <span th:utext="${userName}"></span>, this is the home page.</h2>
-  <a th:href="@{/logout}">Sign out</a>
- </div>
+    <div class="container-fluid bg-light text-center pt-3 pb-3"  style="margin-bottom:0">
+        <h1>ArcTool</h1> 
+    </div>
+      
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/index}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" th:href="@{/signup}">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{/login}">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{/index}">Logout</a>
+            </li>    
+          </ul>
+        </div>  
+    </nav>
+    <br>
+
+<center>
+    <form class="mainDiv" role="form" method="POST" th:action="@{/extract}" th:object="${path}">
+        <label for="FR">Enter the functional requirements below: </label>
+        <textarea id="FR" th:field="*{FR}" name="FR" rows="5" cols="35"></textarea>
+        <br>
+        <br>
+        <label for="path">Enter the path to the JavaDocs:</label>
+        <input type="text" th:field="*{path}" name="path" id="path" style="width:200px;">
+        <br>
+        <input type="submit" class="submit" value="Submit">
+        <br>
+    </form>
+</center>
 </body>
 </html>

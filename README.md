@@ -10,6 +10,9 @@ SRS Document for DEMO ONE: https://www.overleaf.com/project/5edf6e7f78441c000169
 ## Documentation Demo two
 SRS Document for DEMO TWO(Version 2): https://www.overleaf.com/6954724778rrhxnbntkvjn
 
+## User Manual pdf
+https://drive.google.com/file/d/1gHUpqZXujSmo5IX4R7LkgKFMGlmljoYG/view?usp=sharing
+
 ## Project Management Tool
 Clickup: https://app.clickup.com/2554217/v/l/s/4511633
 

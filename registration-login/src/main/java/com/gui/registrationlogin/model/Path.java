@@ -20,8 +20,8 @@ public class Path {
         this.path = path;
     }
 
-    public Path(String fr, String p){
+    /*public Path(String fr, String p){
         this.FR = fr;
         this.path = p;
-    }
+    }*/
 }

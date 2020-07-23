@@ -107,8 +107,9 @@ public class UserController {
      }
      i++;
     } catch (Exception e) {
-     System.out.println(e.getMessage());
-     break;
+     //System.out.println(e.getMessage());
+     return "File not created";
+     //break;
     }
    }
   }

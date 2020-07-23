@@ -19,4 +19,9 @@ public class Path {
     public void setPath(String path) {
         this.path = path;
     }
+
+    public Path(String fr, String p){
+        this.FR = fr;
+        this.path = p;
+    }
 }

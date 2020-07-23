@@ -12,6 +12,7 @@ public class RoleTests {
     void getRole(){
         Role r =new Role();
         r.setRole("Admin");
-        assertEquals("Admin", r.getRole());
+        assertEquals("Admin", r.getRole()); //Pass
+        //assertEquals("user", r.getRole());  //Fail
     }
 }

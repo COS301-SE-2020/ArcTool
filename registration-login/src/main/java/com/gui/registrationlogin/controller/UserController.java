@@ -2,6 +2,7 @@ package com.gui.registrationlogin.controller;
 
 import javax.validation.Valid;
 
+import com.gui.registrationlogin.model.Path;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -13,6 +14,13 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.gui.registrationlogin.model.User;
 import com.gui.registrationlogin.service.UserService;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
 @Controller
 public class UserController {
@@ -52,10 +60,61 @@ public class UserController {
    userService.saveUser(user);
    model.addObject("msg", "User has been registered successfully!");
    model.addObject("user", new User());
-   model.setViewName("user/signup");
+   model.setViewName("FR/functionanRequirements");
   }
   
   return model;
+ }
+
+ //Extraction
+ //@GetMapping("/extract")
+ @RequestMapping(value = {"/extract"}, method = RequestMethod.POST)
+ public String extract(@Valid Path path, BindingResult bindingResult) throws IOException {
+        /*Scanner input = new Scanner(System.in);
+        System.out.print("Enter file path: ");
+        String path = input.nextLine();*/
+  System.out.println("Extracting*************");
+  System.out.println("FR: " + path.getFR());
+  System.out.println("Path: " + path.getPath());
+
+  String text = "";
+  FileWriter writer = new FileWriter("Functional_requirements.txt");
+  File files = new File(path.getPath());
+  int numFiles = files.list().length;
+
+  for (int a = 1; a < numFiles; a++) {
+   File input1 = new File(path.getPath()+"/index-"+a+".html");
+   Document doc = Jsoup.parse(input1, "UTF-8", "");
+   int i = 0;
+   while (true) {
+    try {
+     text = doc.getElementsByClass("block").get(i).text();
+     if (text.contains("FR")) {
+      writer.write(text+"\n");
+      System.out.print(text+".");
+
+      int index = 0;
+      while (true) {
+       try {
+        text = doc.getElementsByClass("typeNameLink").get(index).ownText();
+        writer.write("Class: "+text+"\n");
+        System.out.println("\t\t:: Class:"+text);
+        break;
+       } catch (Exception e) {
+        break;
+       }
+      }
+     }
+     i++;
+    } catch (Exception e) {
+     System.out.println(e.getMessage());
+     break;
+    }
+   }
+  }
+
+  writer.close();
+  return "File created";
  }
  
  @RequestMapping(value= {"/home/home"}, method=RequestMethod.GET)
@@ -75,4 +134,6 @@ public class UserController {
   model.setViewName("errors/access_denied");
   return model;
  }
+
+
 }

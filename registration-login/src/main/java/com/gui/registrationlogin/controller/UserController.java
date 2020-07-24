@@ -21,6 +21,8 @@ import org.jsoup.nodes.Document;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @Controller
 public class UserController {
@@ -118,14 +120,14 @@ public class UserController {
   return "File created";
  }
  
- @RequestMapping(value= {"/home/home"}, method=RequestMethod.GET)
+ @RequestMapping(value= {"/FR/functionalRequirements"}, method=RequestMethod.GET)
  public ModelAndView home() {
   ModelAndView model = new ModelAndView();
   Authentication auth = SecurityContextHolder.getContext().getAuthentication();
   User user = userService.findUserByEmail(auth.getName());
   
   model.addObject("userName", user.getFirstname() + " " + user.getLastname());
-  model.setViewName("home/home");
+  model.setViewName("FR/functionalRequirements");
   return model;
  }
  
@@ -135,6 +137,15 @@ public class UserController {
   model.setViewName("errors/access_denied");
   return model;
  }
+
+ @RequestMapping(value = {"/login"}, method=RequestMethod.POST)
+ public ModelAndView log_in() {
+     ModelAndView model = new ModelAndView();
+
+     model.setViewName("FR/functionalRequirements");
+     return model;
+ }
+ 
 
 
 }

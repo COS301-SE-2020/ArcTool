@@ -3,7 +3,6 @@
 ArcTool is built for efficiency and ease, it aims to make the architect's job easy which in turn will make everyone's work easier. It does this by accepting and processing functional requirements written in a natural language, either structured or unstructured. With the functional requirements being specified, it then processes the JavaDoc to identify requirement patterns with the aim of reusing already established solutions from a Software-Portfolio. These solutions are then used to construct a meta-model, a model that is later used to generate a component diagram and/or an interaction diagram.
 
 ## Video Recording Links
-Demo1 video: ...
 Demo2 video: https://drive.google.com/file/d/1y5X1yqzKfI-wTX9wMUs49kSLIXwHhht8/view?usp=sharing
 
 ## Documentation Demo one
@@ -12,7 +11,6 @@ SRS Document for DEMO ONE: https://www.overleaf.com/project/5edf6e7f78441c000169
 SRS Document for DEMO TWO(Version 2): https://www.overleaf.com/6954724778rrhxnbntkvjn
 
 ## User Manual pdf
-https://drive.google.com/file/d/1gHUpqZXujSmo5IX4R7LkgKFMGlmljoYG/view?usp=sharing
 https://www.overleaf.com/read/vzbywtfsqhkj
 
 

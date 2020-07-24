@@ -4,6 +4,7 @@ ArcTool is built for efficiency and ease, it aims to make the architect's job ea
 
 ## Video Recording Links
 Demo1 video: ...
+Demo2 video: https://drive.google.com/file/d/1y5X1yqzKfI-wTX9wMUs49kSLIXwHhht8/view?usp=sharing
 
 ## Documentation Demo one
 SRS Document for DEMO ONE: https://www.overleaf.com/project/5edf6e7f78441c0001698eb2
@@ -12,6 +13,8 @@ SRS Document for DEMO TWO(Version 2): https://www.overleaf.com/6954724778rrhxnbn
 
 ## User Manual pdf
 https://drive.google.com/file/d/1gHUpqZXujSmo5IX4R7LkgKFMGlmljoYG/view?usp=sharing
+https://www.overleaf.com/read/vzbywtfsqhkj
+
 
 ## Project Management Tool
 Clickup: https://app.clickup.com/2554217/v/l/s/4511633

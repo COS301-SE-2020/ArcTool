@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+    .logo {
+      /*font-family:  "Comic Sans MS", cursive, sans-serif;*/
+      font-style: oblique;
+      font-weight: bold;
+      font-style: italic;
+      color: rgb(10, 72, 114);
+      text-shadow: 10px 10px 10px black, 0 0 25px powderblue, 0 0 5px darkblue;
+      font-size: 200px;
+      font-style: italic;
+      border-radius: 25px;
+      padding-left: 25px;
+      margin-top: 50px;
+    }
+
+    .mainDiv{
+        padding-top: 20px;
+        border: solid 10px powderblue;
+        width: 35%;
+        border-radius: 20px;
+        font-size: 30px;
+        align-content: center;
+    }
+
+    .input{
+        height: 30px;
+        padding-top: 10px;
+        background-color: floralwhite;
+        border-color: powderblue;
+        width: 250px;
+        color: black;
+        border-radius: 25px;
+        font-size: 20px;
+    }
+
+    .submit{
+        height: 30px;
+        background-color: green;
+        border-color: powderblue;
+        width: 150px;
+        color: black;
+        border-radius: 25px;
+        font-size: 20px;
+    }
+
+    #index-body{
+        background-color: grey;
+    }
+    </style>
+</head>
+<body id="index-body">
+    <center>
+        <div class="logo">ArcTool</div>
+        <form class="mainDiv" action="">
+            <label for="username">Username: </label>
+            <input type="text" class="input" name="username" id="username" placeholder="Username">
+            <br>
+            <br>
+            <label for="password">Password: </label>
+            <input type="password" class="input" name="password" id="password">
+            <br>
+            <br>
+            <input type="submit" class="submit" value="Login">
+            <br>
+            <p style="font-size: 15px;">If you don't have an account <a href="register.html">click here</a> to create one</p>
+            <a href="functionalRequirements.html">Enter Functional Requirements</a>
+        </form>
+    </center>
+</body>
+</html>

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.gui.registrationlogin.model.User;
@@ -62,7 +63,7 @@ public class UserController {
    userService.saveUser(user);
    model.addObject("msg", "User has been registered successfully!");
    model.addObject("user", new User());
-   model.setViewName("FR/functionanRequirements");
+   model.setViewName("FR/functionalRequirements");
   }
   
   return model;
@@ -71,7 +72,7 @@ public class UserController {
  //Extraction
  //@GetMapping("/extract")
  @RequestMapping(value = {"/extract"}, method = RequestMethod.POST)
- public String extract(@Valid Path path, BindingResult bindingResult) throws IOException {
+ public String extract(@ModelAttribute Path path, BindingResult bindingResult) throws IOException {
         /*Scanner input = new Scanner(System.in);
         System.out.print("Enter file path: ");
         String path = input.nextLine();*/
@@ -109,9 +110,9 @@ public class UserController {
      }
      i++;
     } catch (Exception e) {
-     //System.out.println(e.getMessage());
-     return "File not created";
-     //break;
+     System.out.println(e.getMessage());
+     //return "File not created";
+     break;
     }
    }
   }

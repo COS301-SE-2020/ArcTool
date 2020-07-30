@@ -27,6 +27,7 @@ public class Extractor {
 		Scanner input = new Scanner(System.in);
 		System.out.print("Enter file path: ");
 		//path=/home/mxolisi/Documents/GitHub/ArcTool/demo_one/JavaDoc/index-files/
+		//path=file:/home/mxolisi/Documents/3rd Year/COS301/ArcTool/Demo 2/demo_one/JavaDoc/index-files
 		String path = input.nextLine();
 		
 		String text = "";
@@ -65,13 +66,14 @@ public class Extractor {
 		}
 		
 		writer.close();
-		draw();
+		drawSD();
+		drawCD();
 	}
 
-	private static  void draw() throws IOException{
+	private static  void drawSD() throws IOException {
 		try {
 			File myObj = new File("Functional_requirements.txt");
-			FileWriter fileWriter = new FileWriter("instr.txt");
+			FileWriter fileWriter = new FileWriter("seq.txt");
 			Scanner myReader = new Scanner(myObj);
 			fileWriter.write("@startuml\n");
 			Boolean bool = false;
@@ -81,7 +83,7 @@ public class Extractor {
 				if (data.contains("Class")) {
 					String str[] = data.split(" ");
 					if (!bool)
-						fileWriter.write( str[str.length - 1] + "->");
+						fileWriter.write(str[str.length - 1] + "->");
 					else
 						fileWriter.write(str[str.length - 1] + "\n");
 					bool = !bool;
@@ -92,11 +94,52 @@ public class Extractor {
 			fileWriter.close();
 
 			//Generating the diagram
-			File source = new File("instr.txt");
+			File source = new File("seq.txt");
 			SourceFileReader reader = new SourceFileReader(source);
 			List<GeneratedImage> list = reader.getGeneratedImages();
 			// Generated files
 			File png = list.get(0).getPngFile();
+			System.out.println("Sequence diagram generated!!!");
+
+		} catch (FileNotFoundException e) {
+			System.out.println("An error occurred.");
+			e.printStackTrace();
+		}
+	}
+
+	private static  void drawCD() throws IOException{
+		try {
+			File myObj = new File("Functional_requirements.txt");
+			FileWriter fileWriter = new FileWriter("comp.txt");
+			Scanner myReader = new Scanner(myObj);
+			fileWriter.write("@startuml\n");
+			Boolean bool = false;
+			while (myReader.hasNextLine()) {
+				String data = myReader.nextLine();
+				System.out.println(data);
+				if (data.contains("Class")) {
+					String str[] = data.split(" ");
+					if (!bool) {
+						fileWriter.write("database \"MySQL\"{\n" +
+								"[" + str[str.length - 1] + "]->");
+					}
+					else {
+						fileWriter.write(str[str.length - 1] + "\n}\n");
+					}
+					bool = !bool;
+				}
+			}
+			fileWriter.write("@enduml\n");
+			myReader.close();
+			fileWriter.close();
+
+			//Generating the diagram
+			File source = new File("comp.txt");
+			SourceFileReader reader = new SourceFileReader(source);
+			List<GeneratedImage> list = reader.getGeneratedImages();
+			// Generated files
+			File png = list.get(0).getPngFile();
+			System.out.println("Component diagram generated!!!!");
 
 		} catch (FileNotFoundException e) {
 			System.out.println("An error occurred.");

@@ -1,8 +1,8 @@
 package com.company;
 import java.io.*;
 /**
- *FR: store a list of people
- * @author Dynamic Ducttape.
+ *FR: Database has a Person, store a list of people
+ * @author Dynamic Ducttape
  * */
 public class Database {
     public Person head;

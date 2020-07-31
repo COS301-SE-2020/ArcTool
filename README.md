@@ -17,6 +17,9 @@ https://www.overleaf.com/read/vzbywtfsqhkj
 ## Project Management Tool
 Clickup: https://app.clickup.com/2554217/v/l/s/4511633
 
+## Coding Standards pdf
+https://www.overleaf.com/read/kysjjtsqmktb
+
 ## Meet the Team 
 > **Nqedile Maseko**  
 I am a third-year Computer Science student,

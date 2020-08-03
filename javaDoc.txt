@@ -1,0 +1,5 @@
+Mouthpiece shall allow users to choose their own mouth shapes.
+Mouthpiece shall also allow a user to create their own mouth by selecting and customising different mouth shapes.
+Mouthpiece shall work in either offline or online mode.
+Mouthpiece shall synchronise and convert the audio input into an animated mouth in real-time.
+Mouthpiece  shall  allow  the  user  to  read  pre-determined  sentences  to  train  the  AI  neu-ral network if necessary.

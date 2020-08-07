@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/ArcTool-MVC.iml" filepath="$PROJECT_DIR$/.idea/ArcTool-MVC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MVC/arcTool/Controller/Controller.iml" filepath="$PROJECT_DIR$/MVC/arcTool/Controller/Controller.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MVC/arcTool/Model/Model.iml" filepath="$PROJECT_DIR$/MVC/arcTool/Model/Model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MVC/arcTool/View/View.iml" filepath="$PROJECT_DIR$/MVC/arcTool/View/View.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MVC/arcTool/arcTool.iml" filepath="$PROJECT_DIR$/MVC/arcTool/arcTool.iml" />
+    </modules>
+  </component>
+</project>

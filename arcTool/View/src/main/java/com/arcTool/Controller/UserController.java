@@ -3,27 +3,29 @@ package com.arcTool.Controller;
 import javax.validation.Valid;
 
 //import com.gui.registrationlogin.model.Path;
+import com.arcTool.Model.UserInput;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 //import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.arcTool.UserModel.User;
 import com.arcTool.Service.UserService;
 
-// import org.jsoup.Jsoup;
-// import org.jsoup.nodes.Document;
+ import org.jsoup.Jsoup;
+ import org.jsoup.nodes.Document;
 
-// import java.io.File;
-// import java.io.FileWriter;
-// import java.io.IOException;
-// import org.springframework.web.bind.annotation.RequestParam;
+import java.awt.*;
+import java.io.File;
+ import java.io.FileWriter;
+ import java.io.IOException;
+ import java.nio.file.*;
 
 
 //@Controller
@@ -65,13 +67,24 @@ public class UserController {
    userService.saveUser(user);
    model.addObject("msg", "User has been registered successfully!");
    model.addObject("user", new User());
-   model.setViewName("/functionalRequirements");
+   model.setViewName("FR/functionalRequirements");
   }
   
   return model;
  }
 
-//  //Extraction
+ @RequestMapping(value = "/process", method = RequestMethod.GET)
+ public String Process(@ModelAttribute UserInput userInput, BindingResult bindingResult) throws IOException {
+  System.out.println("************************************************************************\n**************************************************************");
+  System.out.println("The User's FR is: "+ userInput.getFR());
+
+  MultipartFile file = userInput.getFile();
+  Files.createDirectory(Path.of("/home/mxolisi/Documents/GitHub/ArcTool/WD" + StringUtils.cleanPath(file.getOriginalFilename())));
+
+  return "The FR is : " + userInput.getFR();
+ }
+
+  //Extraction
 //  //@GetMapping("/extract")
 //  @RequestMapping(value = {"/extract"}, method = RequestMethod.POST)
 //  public String extract(@ModelAttribute Path path, BindingResult bindingResult) throws IOException {
@@ -145,7 +158,7 @@ public class UserController {
  public ModelAndView log_in() {
      ModelAndView model = new ModelAndView();
 
-     model.setViewName("/functionalRequirements");
+     model.setViewName("FR/functionalRequirements");
      return model;
  }
  

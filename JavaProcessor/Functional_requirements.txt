@@ -1,4 +1,0 @@
-FR: store a list of people
-Class: Database
-FR: store one person's details (person's name, surname, phone number and email address)
-Class: Person

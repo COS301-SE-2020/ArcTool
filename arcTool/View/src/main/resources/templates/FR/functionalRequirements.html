@@ -43,14 +43,14 @@
 
     <div class="container border border-light rounded shadow">
         <div class="form-group">
-            <form class="mainDiv" action="extract" method="get">
+            <form class="mainDiv" action="process" method="get">
                 <label for="comment">Enter functional requirements:</label>
-                <textarea class="form-control" rows="5" id="comment"></textarea>
+                <textarea class="form-control" rows="5" id="comment" name="comment"></textarea>
                 <br>
-                <label for="file">Upload JavaDoc archive:</label>
-                <input type="file" class="form-control-file border">
+                <label for="zfile">Upload JavaDoc archive:</label>
+                <input type="file" class="form-control-file border" name="zfile" id="zfile">
                 <br>
-                <a href="results.html" class="btn btn-info" role="button">Process</a>
+                <button type="submit" class="btn btn-dark"><i class="fa fa-user-plus"></i> Submit</button>
             <br>
         </form>
         </div>

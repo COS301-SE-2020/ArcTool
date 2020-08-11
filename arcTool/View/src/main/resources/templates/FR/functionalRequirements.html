@@ -35,7 +35,10 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/index}">Logout</a>
-                </li>    
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/history}">history</a>
+                </li>
           </ul>
         </div>  
     </nav>
@@ -43,12 +46,12 @@
 
     <div class="container border border-light rounded shadow">
         <div class="form-group">
-            <form class="mainDiv" action="process" method="get">
+            <form class="mainDiv" th:action="@{/process}" method="POST" th:object = "$UserInput">
                 <label for="comment">Enter functional requirements:</label>
-                <textarea class="form-control" rows="5" id="comment" name="comment"></textarea>
+                <textarea class="form-control" rows="5" id="comment" name="comment" th:field = "*{FR}"></textarea>
                 <br>
                 <label for="zfile">Upload JavaDoc archive:</label>
-                <input type="file" class="form-control-file border" name="zfile" id="zfile">
+                <input type="file" class="form-control-file border" name="zfile" id="zfile" th:field="*{file}">
                 <br>
                 <button type="submit" class="btn btn-dark"><i class="fa fa-user-plus"></i> Submit</button>
             <br>

@@ -52,6 +52,15 @@ public class UserController {
   
   return model;
  }
+
+ @RequestMapping(value = {"/history"}, method = RequestMethod.GET)
+ public ModelAndView history(){
+  ModelAndView modelAndView = new ModelAndView();
+  User user = new User();
+  modelAndView.addObject("user", user);
+  modelAndView.setViewName("FR/history");
+  return modelAndView;
+ }
  
  @RequestMapping(value= {"/signup"}, method=RequestMethod.POST)
  public ModelAndView createUser(@Valid User user, BindingResult bindingResult) {
@@ -68,13 +77,14 @@ public class UserController {
    model.addObject("msg", "User has been registered successfully!");
    model.addObject("user", new User());
    model.setViewName("FR/functionalRequirements");
+   System.out.println("**********************************New user account succcesfully created******************");
   }
   
   return model;
  }
 
- @RequestMapping(value = "/process", method = RequestMethod.GET)
- public String Process(@ModelAttribute UserInput userInput, BindingResult bindingResult) throws IOException {
+ @RequestMapping(value = {"/process"}, method = RequestMethod.POST)
+ public String Process(@Valid UserInput userInput, BindingResult bindingResult) throws IOException {
   System.out.println("************************************************************************\n**************************************************************");
   System.out.println("The User's FR is: "+ userInput.getFR());
 

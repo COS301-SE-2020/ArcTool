@@ -1,0 +1,181 @@
+package com.arcTool.Controller;
+
+import com.arcTool.Model.Database;
+import com.arcTool.Model.User;
+import com.arcTool.Model.UserInput;
+import org.springframework.util.StringUtils;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
+
+import javax.validation.Valid;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+
+@RestController
+public class MainController {
+    @RequestMapping(value= {"/",}, method=RequestMethod.GET)
+    public ModelAndView home() {
+        ModelAndView model = new ModelAndView();
+
+        model.setViewName("home/index");
+        return model;
+    }
+
+    @RequestMapping(value= {"/login",}, method=RequestMethod.GET)
+    public ModelAndView login() {
+        ModelAndView model = new ModelAndView();
+
+        model.setViewName("user/login");
+        return model;
+    }
+
+    @RequestMapping(value= {"/signup"}, method=RequestMethod.GET)
+    public ModelAndView signup() {
+        ModelAndView model = new ModelAndView();
+        User user = new User();
+        model.addObject("user", user);
+        model.setViewName("user/signup");
+
+        return model;
+    }
+
+    @RequestMapping(value = {"/history"}, method = RequestMethod.GET)
+    public ModelAndView history(){
+        ModelAndView modelAndView = new ModelAndView();
+        User user = new User();
+        modelAndView.addObject("user", user);
+        modelAndView.setViewName("FR/history");
+        return modelAndView;
+    }
+
+    @RequestMapping(value= {"/signup"}, method=RequestMethod.POST)
+    public ModelAndView createUser(@ModelAttribute User user, BindingResult bindingResult) {
+        ModelAndView model = new ModelAndView();
+        //User userExists = userService.findUserByEmail(user.getEmail());
+        System.out.println("*******Registering a new user********");
+
+        /*if(userExists != null) {
+            bindingResult.rejectValue("email", "error.user", "This email already exists!");
+        }*/
+        if(bindingResult.hasErrors()) {
+            System.out.println("Binding failed");
+            model.setViewName("user/signup");
+        } else {
+            System.out.println("Binding successfull");
+            System.out.println("First name = " + user.getFirstname());
+            System.out.println("Lastname = " + user.getLastname());
+            System.out.println("Email address = " + user.getEmail());
+            System.out.println("Password = " + user.getPassword());
+            Database db = new Database();
+            if(db.addUser(user)) {
+                model.setViewName("FR/functionalRequirements");
+                model.addObject("msg", "User has been registered successfully!");
+                model.addObject("user", new User());
+            }
+            else {
+                model.addObject("msg", "User registration failed");
+                System.out.println("*********Registration failed******");
+                model.setViewName("user/signup");
+            }
+            //System.out.println("**********************************New user account succcesfully created******************");
+        }
+
+        return model;
+    }
+
+    @RequestMapping(value = {"/process"}, method = RequestMethod.POST)
+    public String Process(@Valid UserInput userInput, BindingResult bindingResult) throws IOException {
+        System.out.println("************************************************************************\n**************************************************************");
+        System.out.println("The User's FR is: "+ userInput.getFR());
+
+        MultipartFile file = userInput.getFile();
+        Files.createDirectory(Path.of("/home/mxolisi/Documents/GitHub/ArcTool/WD" + StringUtils.cleanPath(file.getOriginalFilename())));
+
+        return "The FR is : " + userInput.getFR();
+    }
+
+    //Extraction
+//  //@GetMapping("/extract")
+//  @RequestMapping(value = {"/extract"}, method = RequestMethod.POST)
+//  public String extract(@ModelAttribute Path path, BindingResult bindingResult) throws IOException {
+//         /*Scanner input = new Scanner(System.in);
+//         System.out.print("Enter file path: ");
+//         String path = input.nextLine();*/
+//   System.out.println("Extracting*************");
+//   System.out.println("FR: " + path.getFR());
+//   System.out.println("Path: " + path.getPath());
+
+//   String text = "";
+//   FileWriter writer = new FileWriter("Functional_requirements.txt");
+//   File files = new File(path.getPath());
+//   int numFiles = files.list().length;
+
+//   for (int a = 1; a < numFiles; a++) {
+//    File input1 = new File(path.getPath()+"/index-"+a+".html");
+//    Document doc = Jsoup.parse(input1, "UTF-8", "");
+//    int i = 0;
+//    while (true) {
+//     try {
+//      text = doc.getElementsByClass("block").get(i).text();
+//      if (text.contains("FR")) {
+//       writer.write(text+"\n");
+//       System.out.print(text+".");
+
+//       int index = 0;
+//       while (true) {
+//        try {
+//         text = doc.getElementsByClass("typeNameLink").get(index).ownText();
+//         writer.write("Class: "+text+"\n");
+//         System.out.println("\t\t:: Class:"+text);
+//         break;
+//        } catch (Exception e) {
+//         break;
+//        }
+//       }
+//      }
+//      i++;
+//     } catch (Exception e) {
+//      System.out.println(e.getMessage());
+//      //return "File not created";
+//      break;
+//     }
+//    }
+//   }
+
+//   writer.close();
+//   return "File created";
+//  }
+
+    @RequestMapping(value= {"/functionalRequirements"}, method= RequestMethod.GET)
+    public ModelAndView fr() {
+        ModelAndView model = new ModelAndView();
+        //Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        //User user = userService.findUserByEmail(auth.getName());
+
+        //model.addObject("userName", user.getFirstname() + " " + user.getLastname());
+        model.setViewName("FR/functionalRequirements");
+        return model;
+    }
+
+    @RequestMapping(value= {"/access_denied"}, method=RequestMethod.GET)
+    public ModelAndView accessDenied() {
+        ModelAndView model = new ModelAndView();
+        model.setViewName("user/access_denied");
+        return model;
+    }
+
+    @RequestMapping(value = {"/login"}, method=RequestMethod.POST)
+    public ModelAndView log_in() {
+        ModelAndView model = new ModelAndView();
+        //User user = new User();
+        //model.addObject("user", user);
+        model.setViewName("FR/functionalRequirements");
+        return model;
+    }
+}

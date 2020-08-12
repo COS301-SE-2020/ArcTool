@@ -1,0 +1,5 @@
+@startuml
+database "MySQL"{
+[Database]->Person
+}
+@enduml

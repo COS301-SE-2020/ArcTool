@@ -35,14 +35,22 @@ public class UserController {
  @Autowired
  private UserService userService;
  
- @RequestMapping(value= {"/", "/login"}, method=RequestMethod.GET)
- public ModelAndView login() {
+ @RequestMapping(value= {"/"}, method=RequestMethod.GET)
+ public ModelAndView home() {
   ModelAndView model = new ModelAndView();
   
+  model.setViewName("home/index");
+  return model;
+ }
+
+ @RequestMapping(value= {"/login"}, method=RequestMethod.GET)
+ public ModelAndView login() {
+  ModelAndView model = new ModelAndView();
+
   model.setViewName("user/login");
   return model;
  }
- 
+
  @RequestMapping(value= {"/signup"}, method=RequestMethod.GET)
  public ModelAndView signup() {
   ModelAndView model = new ModelAndView();
@@ -81,18 +89,25 @@ public class UserController {
   }
   
   return model;
+
  }
 
  @RequestMapping(value = {"/process"}, method = RequestMethod.POST)
- public String Process(@Valid UserInput userInput, BindingResult bindingResult) throws IOException {
-  System.out.println("************************************************************************\n**************************************************************");
+ public String process(@RequestParam("comment") String comment){
+  System.out.println("*******Processing*******");
+  System.out.println("The comment is: " + comment);
+  //System.out.println("The name of the zip file is: ");
+  return "Processing";
+ }
+ /*public String Process(@ModelAttribute UserInput userInput, BindingResult bindingResult) throws IOException {
+  System.out.println("****************************************Processing**********************");
   System.out.println("The User's FR is: "+ userInput.getFR());
 
   MultipartFile file = userInput.getFile();
-  Files.createDirectory(Path.of("/home/mxolisi/Documents/GitHub/ArcTool/WD" + StringUtils.cleanPath(file.getOriginalFilename())));
+ //Files.createDirectory(Path.of("/home/mxolisi/Documents/GitHub/ArcTool/WD" + StringUtils.cleanPath(file.getOriginalFilename())));
 
   return "The FR is : " + userInput.getFR();
- }
+ }*/
 
   //Extraction
 //  //@GetMapping("/extract")
@@ -147,7 +162,7 @@ public class UserController {
 //  }
  
  @RequestMapping(value= {"/functionalRequirements"}, method=RequestMethod.GET)
- public ModelAndView home() {
+ public ModelAndView fr() {
   ModelAndView model = new ModelAndView();
   Authentication auth = SecurityContextHolder.getContext().getAuthentication();
   User user = userService.findUserByEmail(auth.getName());
@@ -167,7 +182,8 @@ public class UserController {
  @RequestMapping(value = {"/login"}, method=RequestMethod.POST)
  public ModelAndView log_in() {
      ModelAndView model = new ModelAndView();
-
+     //User user = new User();
+     //model.addObject("user", user);
      model.setViewName("FR/functionalRequirements");
      return model;
  }

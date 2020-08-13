@@ -1,4 +1,6 @@
-package com.arcTool.gui;
+package com.arcTool;
+
+// package com.arcTool.gui;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

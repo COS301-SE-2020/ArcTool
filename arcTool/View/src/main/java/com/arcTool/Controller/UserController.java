@@ -51,6 +51,15 @@ public class UserController {
   return model;
  }
 
+//  @RequestMapping(value = {"/login"}, method=RequestMethod.POST)
+//  public ModelAndView log_in() {
+//      ModelAndView model = new ModelAndView();
+//      //User user = new User();
+//      //model.addObject("user", user);
+//      model.setViewName("FR/functionalRequirements");
+//      return model;
+//  }
+
  @RequestMapping(value= {"/signup"}, method=RequestMethod.GET)
  public ModelAndView signup() {
   ModelAndView model = new ModelAndView();
@@ -84,7 +93,7 @@ public class UserController {
    userService.saveUser(user);
    model.addObject("msg", "User has been registered successfully!");
    model.addObject("user", new User());
-   model.setViewName("FR/functionalRequirements");
+   model.setViewName("user/signup");
    System.out.println("**********************************New user account succcesfully created******************");
   }
   
@@ -179,14 +188,6 @@ public class UserController {
   return model;
  }
 
- @RequestMapping(value = {"/login"}, method=RequestMethod.POST)
- public ModelAndView log_in() {
-     ModelAndView model = new ModelAndView();
-     //User user = new User();
-     //model.addObject("user", user);
-     model.setViewName("FR/functionalRequirements");
-     return model;
- }
  
 
 

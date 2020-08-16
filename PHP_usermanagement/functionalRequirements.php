@@ -1,4 +1,31 @@
 <?php include "base.php"; ?>
+<?php
+// here ins_zip is your index file button name
+if(isset($_POST['ins_zip']))
+{
+   // here files is a database
+   $con = mysqli_connect('localhost','root','','database');
+   if(!$con)
+   {
+      die('Connection not Establish');
+   }
+   // here $_FILES is a method for storing file
+   if(!empty($_FILES['zip']['name']))
+   {
+      $filename = $_FILES['zip']['name'];
+      $ins_img = "INSERT INTO upload(uploads) VALUES ('$filename')";
+      $ins_query = mysqli_query($con,$ins_img);
+      if($ins_query)
+      {
+         echo 'Successfully uploaded Zip file';
+      }
+      else
+      {
+         echo 'Problem in uploading Zip file';
+      }
+   }
+}
+?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
@@ -52,8 +79,22 @@
             <textarea class="form-control" rows="5" id="comment" name="comment"></textarea>
             <br>
             
-            <input type='file' name='file[]' id='file' multiple>
-            <input type='submit' name='submit' value='upload'>
+            <!-- <input type='file' name='file[]' id='file' multiple>
+            <input type='submit' name='submit' value='upload'> -->
+
+            <!-- <?php //if($message) echo "<p>$message</p>"; ?> -->
+            <!-- <form enctype="multipart/form-data" method="post" action="">
+            <label>Choose a zip file to upload: <input type="file" name="zip_file" /></label>
+            <br />
+            <input type="submit" name="submit" value="Upload" />
+            </form> -->
+
+            <div class="col-sm-6">
+         <form method="post" enctype="multipart/form-data" action="insert_zip.php">
+            <input type="file" class="form-control" name="zip"/>
+            <p><button class="btn btn-success" name="ins_zip">Insert Zip File</button></p>
+         </form>
+      </div>
             
             <br>
         </form>

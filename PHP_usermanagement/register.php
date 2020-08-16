@@ -75,7 +75,7 @@ else
 
 <p>Please enter your details below to register.</p>
 
-<form class="form-horizontal" method="post" action="formcheck.php" name="registerform" id="registerform">
+<form class="form-horizontal" method="post" action="process_data.php" name="registerform" id="registerform">
 <fieldset>
 <!-- <label for="username">Username:</label><input type="text" name="username" id="username" /><br /> -->
 <div class="row">

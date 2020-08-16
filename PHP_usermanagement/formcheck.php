@@ -1,7 +1,7 @@
 <?php
 include "base.php";
 ?>
-<!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Strict//EN” “http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd”>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content=text/html; charset=utf-8″ />
@@ -31,7 +31,8 @@ elseif(isset($_POST['Login']))
 $username = mysql_real_escape_string($_POST['username']);
 $password = md5(mysql_real_escape_string($_POST['password']));
 
-$checklogin = mysql_query("SELECT * FROM users WHERE Username = '".$username."' AND Password = '".$password."'");
+$checklogin = mysql_query("SELECT * FROM users WHERE Username = `$username` AND Password = `$password`");
+// $checklogin = mysql_query("SELECT * FROM users WHERE Username = '".$username."' AND Password = '".$password."'");
 
 if(mysql_num_rows($checklogin) == 1)
 {
@@ -44,7 +45,7 @@ $_SESSION['LoggedIn'] = 1;
 
 echo "<h1>Success</h1>";
 echo "<p>We are now redirecting you to the member area.</p>";
-echo "<meta http-equiv=’refresh’ content=’=2;index.php’ />";
+echo "<meta http-equiv='refresh' content='=2;index.php'/>";
 }
 else
 {

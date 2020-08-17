@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:th="http://www.thymeleaf.org">
+<head>
+ <title>Sign up</title>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+ <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <div class="container-fluid bg-light text-center pt-3 pb-3"  style="margin-bottom:0">
+        <h1>ArcTool</h1> 
+      </div>
+      
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{home/index}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" th:href="@{/signup}">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{/login}">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{home/index}">Logout</a>
+            </li>    
+          </ul>
+        </div>  
+      </nav>
+       
+ <div class="container text-center pt-5 pb-5">
+     <form class="form-horizontal" role="form" method="POST" th:action="@{/signup}" th:object="${user}">
+      <div class="row">
+             <div class="col-md-3"></div>
+             <div class="col-md-6">
+              <div class="alert alert-success" role="alert" th:if="${msg}" th:utext="${msg}">
+     </div>
+             </div>
+         </div>
+         <div class="row">
+             <div class="col-md-3"></div>
+             <div class="col-md-6">
+                 <h2>Register New User</h2>
+                 <hr>
+             </div>
+         </div>
+         <div class="row">
+             <div class="col-md-3 field-label-responsive">
+                 <label for="firstname">First Name</label>
+             </div>
+             <div class="col-md-6">
+                 <div class="form-group">
+                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                         <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
+                         <input type="text" th:field="*{firstname}" class="form-control" id="firstname"
+                                placeholder="First Name" required autofocus>
+                     </div>
+                 </div>
+             </div>
+         </div>
+         <div class="row">
+             <div class="col-md-3 field-label-responsive">
+                 <label for="lastname">Last Name</label>
+             </div>
+             <div class="col-md-6">
+                 <div class="form-group">
+                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                         <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
+                         <input type="text" th:field="*{lastname}" class="form-control" id="lastname"
+                                placeholder="Last name" required autofocus>
+                     </div>
+                 </div>
+             </div>
+         </div>
+         <div class="row">
+             <div class="col-md-3 field-label-responsive">
+                 <label for="email">Email</label>
+             </div>
+             <div class="col-md-6">
+                 <div class="form-group">
+                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                         <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
+                         <input type="text" th:field="*{email}" class="form-control" id="email"
+                                placeholder="username@something.com" required autofocus>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-md-3">
+                 <div class="form-control-feedback">
+                         <span class="text-danger align-middle" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">
+                         </span>
+                 </div>
+             </div>
+         </div>
+         <div class="row">
+             <div class="col-md-3 field-label-responsive">
+                 <label for="password">Password</label>
+             </div>
+             <div class="col-md-6">
+                 <div class="form-group has-danger">
+                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                         <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
+                         <input type="password" th:field="*{password}" class="form-control" id="password"
+                                placeholder="Password" required>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-md-3">
+                 <div class="form-control-feedback">
+                         <span class="text-danger align-middle" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">
+                         </span>
+                 </div>
+             </div>
+         </div>
+         <div class="row">
+             <div class="col-md-3"></div>
+             <div class="col-md-6">
+                 <button type="submit" class="btn btn-dark"><i class="fa fa-user-plus"></i> Register</button>
+             </div>
+         </div>
+         <p>
+
+         </p>
+         <div class="margin-top20 text-center"> Already registered? <a th:href="@{/login}">Log in</a></div>
+     </form>
+ </div>
+
+ <div class="container-fluid text-center bg-light pt-2 pb-2" style="margin-bottom:0">
+    <p>Footer</p>
+  </div>
+</body>
+</html>

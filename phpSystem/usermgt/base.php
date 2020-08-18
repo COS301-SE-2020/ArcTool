@@ -53,7 +53,7 @@ if (isset($_POST['user_register'])) {
           mysqli_query($conn, $query);
           $_SESSION['username'] = $username;
           $_SESSION['success'] = "You are now logged in";
-          header('location: index.php');
+          header('location: login.php');
       }
     }
 
@@ -83,7 +83,7 @@ if (isset($_POST['user_login'])) {
         }
     }
     else {
-        header('location: index.php');
+        header('location: login.php');
     }
   }
 

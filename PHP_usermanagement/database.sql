@@ -1,0 +1,15 @@
+CREATE DATABASE `database` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+CREATE TABLE IF NOT EXISTS 'users' (
+'id' int(11) NOT NULL AUTO_INCREMENT,
+'Username' varchar(44) NOT NULL,
+'Password' varchar(44) NOT NULL,
+'EmailAddress' varchar(90) NOT NULL,
+PRIMARY KEY ('id')
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+CREATE TABLE IF NOT EXISTS 'upload' (
+'id' int(11) NOT NULL AUTO_INCREMENT,
+'uploads' varchar(90) NOT NULL,
+PRIMARY KEY ('id')
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;

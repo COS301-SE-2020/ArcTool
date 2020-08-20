@@ -1,0 +1,105 @@
+<?php include "base.php"; ?>
+<?php
+// here ins_zip is your index file button name
+if(isset($_POST['ins_zip']))
+{
+   // here files is a database
+   $con = mysqli_connect('localhost','root','','database');
+   if(!$con)
+   {
+      die('Connection not Establish');
+   }
+   // here $_FILES is a method for storing file
+   if(!empty($_FILES['zip']['name']))
+   {
+      $filename = $_FILES['zip']['name'];
+      $ins_img = "INSERT INTO upload(uploads) VALUES ('$filename')";
+      $ins_query = mysqli_query($con,$ins_img);
+      if($ins_query)
+      {
+         echo 'Successfully uploaded Zip file';
+      }
+      else
+      {
+         echo 'Problem in uploading Zip file';
+      }
+   }
+}
+?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Input</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="container-fluid bg-light text-center pt-3 pb-3"  style="margin-bottom:0">
+    <h1>ArcTool</h1>
+</div>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/index}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/signup}">Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/login}">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/index}">Logout</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/history}">history</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<br>  <br>  <br>
+
+<div class="container border border-light rounded shadow">
+    <div class="form-group">
+        <form action ="" class="mainDiv" role="form"  method="POST" enctype="multipart/form-data">
+            <label for="comment">Enter functional requirements:</label>
+            <textarea class="form-control" rows="5" id="comment" name="comment"></textarea>
+            <br>
+            
+            <!-- <input type='file' name='file[]' id='file' multiple>
+            <input type='submit' name='submit' value='upload'> -->
+
+            <!-- <?php //if($message) echo "<p>$message</p>"; ?> -->
+            <!-- <form enctype="multipart/form-data" method="post" action="">
+            <label>Choose a zip file to upload: <input type="file" name="zip_file" /></label>
+            <br />
+            <input type="submit" name="submit" value="Upload" />
+            </form> -->
+
+            <div class="col-sm-6">
+         <form method="post" enctype="multipart/form-data" action="insert_zip.php">
+            <input type="file" class="form-control" name="zip"/>
+            <p><button class="btn btn-success" name="ins_zip">Insert Zip File</button></p>
+         </form>
+      </div>
+            
+            <br>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

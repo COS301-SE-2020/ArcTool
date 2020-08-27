@@ -1,3 +1,0 @@
-@startuml
-Database->Person
-@enduml

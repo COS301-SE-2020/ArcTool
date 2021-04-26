@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Results</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<style>
+    body {
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+    .page {
+        background-image: url("bckg.jpg");
+        height: 100vh;
+    }
+    .top {
+        height: 90%;
+        width: 100%;
+        position: absolute;
+        top: 15%;
+    }
+    .top iframe {
+        width: 100%;
+        height: 100%;
+        outline: none;
+    }
+    .inner {
+        height: 40%;
+        width: 100%;
+        position: relative;
+    }
+    .content {
+        background: mediumspringgreen;
+        height: 15%;
+        width: 45%;
+        margin: 0 auto;
+        border-radius: 5px;
+        border: 1px groove black;
+        word-wrap: break-word;
+    }
+    .cont {
+        height: 10%;
+        width: 35%;
+        margin: 0 auto;
+    }
+    /*.btn {*/
+    /*    width: 50%;*/
+    /*    height: 100%;*/
+    /*    margin: 0 auto;*/
+    /*}*/
+</style>
+<body>
+    <div class="page">
+        <div class="inner">
+            <div class="content"  >
+                <p style="font-size: 25px; color: black; padding-top: -2px;">COPY LINK AND PASTE ON TEXT BOX, THEN PRESS SUBMIT!</p>
+                <p id="p1" style="font-size: 0px;"></p>
+            </div>
+            <div class="cont">
+                <div class="copy">
+                    <button class="btn" data-clipboard-target="#p1">Copy Generated Code</button>
+                </div>
+            </div>
+        </div>
+        <div class="top">
+            <iframe src="http://www.plantuml.com/plantuml/uml/"></iframe>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+    <script>
+        var txtFile = new XMLHttpRequest();
+        var allText = "file not found kani why";
+        txtFile.onreadystatechange = function () {
+            if (txtFile.readyState === XMLHttpRequest.DONE && txtFile.status == 200) {
+                allText = txtFile.responseText;
+                allText = allText.split("\n").join("<br>");
+            }
+
+            document.getElementById('p1').innerHTML = allText;
+        }
+        txtFile.open("GET", 'read.txt', true);
+        txtFile.send(null);
+
+        var clip = new ClipboardJS(".btn");
+        clip.on('success', function(){
+            M.toast({
+                html:"Code Copied Successfully, Now Paste or Something!!",
+                classes:"green"
+            });
+        });
+
+    </script>
+</body>
+</html>

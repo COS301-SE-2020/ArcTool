@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FR</title>
+    <style>
+    .logo {
+      /*font-family:  "Comic Sans MS", cursive, sans-serif;*/
+      /*font-style: oblique;*/
+      /*font-weight: bold;*/
+      /*font-style: italic;*/
+      /*color: rgb(10, 72, 114);*/
+      /*text-shadow: 10px 10px 10px black, 0 0 25px powderblue, 0 0 5px darkblue;*/
+      /*font-size: 200px;*/
+      /*font-style: italic;*/
+      /*border-radius: 25px;*/
+      /*padding-left: 25px;*/
+      /*margin-top: 50px;*/
+        height: 100px;
+        background-color: rgb(0,0,0,0.7);
+        width: 100%;
+    }
+
+    #cen {
+        height: 600px;
+    }
+
+    #inner {
+        position: relative;
+        top: 20%;
+    }
+
+    .mainDiv{
+        padding-top: 20px;
+        border: solid 10px black;
+        width: 35%;
+        border-radius: 20px;
+        font-size: 30px;
+        align-content: center;
+        background-color: rgb(0,0,0,0.7);
+    }
+
+    .input{
+        height: 30px;
+        float: right;
+        padding-right: 20px;
+        padding-top: 10px;
+        background-color: floralwhite;
+        border-color: powderblue;
+        width: 250px;
+        color: black;
+        border-radius: 25px;
+        font-size: 20px;
+    }
+
+    .submit{
+        height: 30px;
+        background-color: green;
+        border-color: powderblue;
+        width: 150px;
+        color: black;
+        border-radius: 25px;
+        font-size: 20px;
+    }
+
+    #index-body{
+        background-image: url("bckg.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
+    label {
+        color: white;
+    }
+
+    #FR {
+        outline: none;
+        padding-top: 5px;
+        top: 10%;
+    }
+
+    #logo {
+        height: 100%;
+        width: 40%;
+        margin: 0 auto;
+    }
+
+    #logo h1 {
+        padding-top: 20px;
+        font-size: 50px;
+        font-family:  "Comic Sans MS", cursive, sans-serif;
+        font-style: oblique;
+        font-weight: bold;
+        color: white;
+    }
+    </style>
+</head>
+<body id="index-body">
+<center>
+    <div class="logo">
+        <div id="logo">
+            <h1>ArcTool</h1>
+        </div>
+    </div>
+    <div id="cen">
+        <div id="inner">
+            <form class="mainDiv" >
+                <label for="FR">Enter the functional requirements below: </label>
+                <textarea id="FR" name="FR" rows="10" cols="70" style="border: blue 2px groove; border-radius: 10px;"></textarea>
+                <br>
+                <br>
+                <label for="path">Enter the path to the JavaDocs:</label>
+                <input type="text" name="path" id="path" style="width:200px;">
+                <br>
+                <br>
+<!--                <input type="submit" class="submit" value="Submit">-->
+                <button class="submit"><a href="results.html"> Process </a></button>
+                <br>
+            </form>
+        </div>
+    </div>
+
+</center>
+</body>
+</html>

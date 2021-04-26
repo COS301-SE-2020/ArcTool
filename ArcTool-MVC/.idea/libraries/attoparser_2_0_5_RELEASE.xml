@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="attoparser-2.0.5.RELEASE">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/MVC/arcTool/Jar files/attoparser-2.0.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/MVC/arcTool/Jar files/javassist-3.20.0-GA.jar!/" />
+      <root url="jar://$PROJECT_DIR$/MVC/arcTool/Jar files/jsoup-1.13.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/MVC/arcTool/Jar files/ognl-3.1.12.jar!/" />
+      <root url="jar://$PROJECT_DIR$/MVC/arcTool/Jar files/slf4j-api-1.7.25.jar!/" />
+      <root url="jar://$PROJECT_DIR$/MVC/arcTool/Jar files/thymeleaf-3.0.11.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/MVC/arcTool/Jar files/unbescape-1.1.6.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
